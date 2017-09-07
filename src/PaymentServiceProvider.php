@@ -24,6 +24,6 @@ class PaymentServiceProvider extends ServiceProvider
 
     public function register()
     {
-        $this->app->bind(PaymentGateway::class, EuropabankPaymentGateway::class);
+        $this->app->bind(PaymentGateway::class, config('payment.gateway'));
     }
 }

@@ -9,9 +9,10 @@ return
                  */
                 'submitButtonClass' => 'test'
             ],
+        'gateway' => \Spatie\Payment\Gateways\Europabank\PaymentGateway::class,
 
-        'europabank' =>
-            [
+        'gateways' => [
+            'europabank' => [
                 'clientSecret' => env('EUROPABANK_CLIENT_SECRET'),
                 'serverSecret' => env('EUROPABANK_SERVER_SECRET'),
 
@@ -58,4 +59,5 @@ return
                  */
                 'secondChanceEmailSender' => '',
             ]
+        ]
     ];

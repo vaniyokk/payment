@@ -54,7 +54,7 @@ class PaymentGatewayResponseValidator
      */
     private function validateUid()
     {
-        if ($this->gatewayResponse['Uid'] != config('payment.europabank.uid')) {
+        if ($this->gatewayResponse['Uid'] != config('payment.gateways.europabank.uid')) {
             throw new PaymentVerificationFailedException('Uid was not correct');
         }
     }
@@ -95,7 +95,7 @@ class PaymentGatewayResponseValidator
             sha1(
                 $this->gatewayResponse['Id'].
                 $this->gatewayResponse['Orderid'].
-                config('payment.europabank.clientSecret')
+                config('payment.gateways.europabank.clientSecret')
             )
         );
     }
